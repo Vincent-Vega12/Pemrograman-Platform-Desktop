@@ -1,9 +1,3 @@
-"""View Tkinter untuk Quiz Interaktif.
-
-QuizUI mengelola SEMUA widget, timer (after), dan animasi feedback.
-Tidak menyimpan skor / tidak menilai jawaban — itu tugas QuizManager
-via QuizApp sebagai orkestrator.
-"""
 import tkinter as tk
 from tkinter import ttk
 
@@ -30,7 +24,7 @@ class QuizUI:
 
         self.build_quiz_widgets()
 
-    # ---------- pembangunan widget ----------
+    # pembangunan widget
     def clear_parent(self):
         for widget in self.parent.winfo_children():
             widget.destroy()
@@ -191,7 +185,7 @@ class QuizUI:
             text="", bg="#F1F5F9", fg="#334155", padx=0, pady=0
         )
 
-    # ---------- timer (dikelola UI) ----------
+    # timer
     def start_timer(self, seconds, on_timeout):
         self.cancel_timer()
         self.time_left = seconds
@@ -231,7 +225,7 @@ class QuizUI:
                 pass
             self.timer_job = None
 
-    # ---------- feedback + animasi (dikelola UI) ----------
+    # feedback + animasi
     def show_correct(self, text="BENAR! +10 poin"):
         self._animate(text, "#198754", "#D1FAE5")
 
@@ -285,7 +279,7 @@ class QuizUI:
         self.stop_timer()
         self.cancel_animation()
 
-    # ---------- layar hasil ----------
+    # layar hasil 
     def show_result(self, result, on_restart):
         self.cleanup()
         self.clear_parent()

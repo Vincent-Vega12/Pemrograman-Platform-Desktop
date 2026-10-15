@@ -1,4 +1,4 @@
-"""Orkestrator QuizApp: menghubungkan QuizManager (logika) + QuizUI (tampilan)."""
+"""menghubungkan QuizManager + QuizUI."""
 import tkinter as tk
 from tkinter import messagebox
 
@@ -29,7 +29,7 @@ class QuizApp:
 
         self.load_question()
 
-    # ---------- kompatibilitas template lama ----------
+    
     def buat_interface(self):
         self.ui.build_quiz_widgets()
 
@@ -81,7 +81,7 @@ class QuizApp:
     def jalankan(self):
         self.window.mainloop()
 
-    # ---------- alur internal ----------
+    
     def next_question(self):
         if not self.ui.locked or self.manager.is_finished():
             return

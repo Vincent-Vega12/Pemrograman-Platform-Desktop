@@ -1,10 +1,5 @@
-"""Model / state management untuk Quiz Interaktif.
-
-Murni logika Python, tanpa Tkinter agar mudah di-test dan diperbaiki.
-"""
+"""Model / state management untuk Quiz Interaktif."""
 import random
-
-
 class QuizManager:
     def __init__(self, questions=None):
         self.questions = questions if questions is not None else self.get_default_questions()
